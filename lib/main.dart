@@ -10,58 +10,35 @@ class MyApp extends StatelessWidget {
   // Root app.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        home: Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Texto para Título',
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            ),
-            Text('Texto para descripción'),
-            Row(
+    return MaterialApp(
+      home: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/fondo.jpg'), fit: BoxFit.cover)),
+        child: const Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                  width: 200.0,
-                  height: 260.0,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(color: Colors.red),
-                  ),
-                ),
-                SizedBox(
-                  width: 200,
-                  height: 260,
-                  child: Containers(),
+                Text('Welcome to',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white54,
+                    )),
+                Text(
+                  'Cinematica',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 50,
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white),
                 )
               ],
-            )
-          ],
+            ),
+          ),
         ),
       ),
-    ));
-  }
-}
-
-class Containers extends StatelessWidget {
-  const Containers({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(children: [
-      Container(
-        width: 100,
-        height: 130,
-        color: Colors.white,
-      ),
-      Container(
-        width: 50,
-        height: 65,
-        color: Colors.blue,
-      )
-    ]);
+    );
   }
 }
